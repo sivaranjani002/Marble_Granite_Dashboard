@@ -1,61 +1,150 @@
-**Marble & Granite Business Dashboard**
+📊 Key Dashboard Features
+1. Management Overview
 
-This project is a Power BI dashboard designed for a marble and granite trading company. It provides a comprehensive business overview across sales, inventory, purchases, and supplier performance, enabling management to make data‑driven decisions.
+Provides management with a high-level view of overall business performance through interactive KPIs and visualizations.
 
-**Key Features**
-Management Overview  
-High‑level KPIs: Total Sales, Profit, Margin %, Quantity Sold, Current Stock, Customers, Products.
-Visuals: Monthly Sales Trend, Payment Status, Location‑wise Sales, Category‑wise Sales, Top 5 Products.
+KPIs:
 
-**Sales Analysis**  
-Product‑wise Sales & Profit comparison.
-Customer‑wise Sales table.
-Top Customers ranking.
-Monthly Quantity trend line chart.
+Total Sales
+Total Profit
+Profit Margin %
+Total Quantity Sold
+Current Stock
+Total Customers
+Total Products
 
-**Inventory**  
-Current Stock by product.
-Total Stock Value card.
-Purchased vs Sold comparison chart.
-Low‑stock Products table (threshold filter).
+Visualizations:
 
-Purchase & Supplier  
-Total Purchases card.
-Supplier‑wise Purchases bar chart.
-Product‑wise Purchases matrix.
-Monthly Purchase Trend line chart.
+Monthly Sales Trend
+Category-wise Sales
+Location-wise Sales
+Payment Status
+Top 5 Products by Sales
 
-**Data Sources**
-Sales table → Orders, customers, payment status.
+Business Purpose:
+Helps management quickly understand overall sales performance, profitability, customer activity, and revenue-generating products.
 
-Stock table → Opening, purchased, sold, closing stock.
+2. Sales Analysis
 
-Purchases table → Supplier transactions.
+Provides detailed analysis of customer and product sales performance.
 
-Products table → Selling price, cost price, margin %.
+Analysis includes:
 
-Customers table → Customer type and location.
+Product-wise Sales and Profit
+Customer-wise Sales
+Top Customers
+Monthly Quantity Sold
 
-**KPIs Defined**
-Total Sales = SUM(Sales[Sales_Amount])
+Business Purpose:
+Identifies best-selling products, high-value customers, sales trends, and profitable products, helping management understand what products and customers are driving revenue.
 
-Total Profit = SUM(Sales[Profit])
+3. Inventory Analysis
 
-Profit Margin % = DIVIDE([Total Profit], [Total Sales], 0)
+Monitors inventory levels and stock movement across products.
 
-Total Quantity Sold = SUM(Sales[Quantity_sqft])
+Analysis includes:
 
-Total Stock Value = SUM(Stock[Stock_Value])
+Current Stock by Product
+Total Stock Value
+Purchased vs Sold Quantity
+Low-stock Products
 
-Total Purchases = SUM(Purchases[Purchase_Amount])
+Business Purpose:
+Helps prevent stock shortages and identify products with low or excess inventory. Management can use this information to plan future purchases and maintain appropriate stock levels.
 
-**Business Benefits**
-Identify top products and customers driving revenue.
+4. Purchase & Supplier Analysis
 
-Track payment status (Paid vs Pending).
+Provides visibility into purchasing activities and supplier contribution.
 
-Monitor low‑stock items to avoid shortages.
+Analysis includes:
 
-Evaluate supplier contribution and monthly purchase trends.
+Total Purchase Amount
+Supplier-wise Purchases
+Product-wise Purchase Quantity
+Monthly Purchase Trend
 
-Provide management with clear KPIs for decision‑making.
+Business Purpose:
+Helps management understand purchasing patterns, supplier contribution, product procurement volume, and monthly purchasing trends, supporting better inventory and supplier management.
+
+📁 Data Model
+
+The dashboard is built using multiple structured tables:
+
+Sales Table
+
+Contains transaction-level information such as:
+
+Order/Invoice
+Date
+Customer
+Product
+Quantity
+Selling Price
+Sales Amount
+Profit
+Payment Status
+Pending Amount
+Products Table
+
+Contains product master information:
+
+Product
+Category
+Selling Price
+Cost Price
+Margin %
+Customers Table
+
+Contains:
+
+Customer
+Customer Type
+Location
+Purchases Table
+
+Contains:
+
+Purchase Date
+Supplier
+Product
+Quantity Purchased
+Purchase Price
+Purchase Amount
+Stock Table
+
+Contains:
+
+Opening Stock
+Purchased Quantity
+Sold Quantity
+Closing Stock
+Stock Value
+
+📐 Key DAX Measures
+Total Sales =
+SUM(Sales[Sales_Amount])
+Total Profit =
+SUM(Sales[Profit])
+Profit Margin % =
+DIVIDE([Total Profit], [Total Sales], 0)
+Total Quantity Sold =
+SUM(Sales[Quantity_sqft])
+Total Stock Value =
+SUM(Stock[Stock_Value])
+Total Purchases =
+SUM(Purchases[Purchase_Amount])
+
+💼 Business Impact
+
+The dashboard enables management to:
+
+Monitor overall sales and profitability
+Identify top-performing and slow-moving products
+Analyze customer purchasing behavior
+Track pending and completed payments
+Monitor current inventory and stock value
+Identify low-stock products
+Compare purchased vs sold quantities
+Evaluate supplier purchasing contribution
+Analyze monthly sales and purchase trends
+Make faster, data-driven business decisions
